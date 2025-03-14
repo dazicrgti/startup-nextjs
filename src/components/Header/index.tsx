@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 
 const Header = () => {
@@ -49,7 +48,7 @@ const Header = () => {
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 xl:mr-12">
+            <div className="w-40 max-w-80 px-4 xl:mr-12">
               <Link
                 href="/"
                 className={`header-logo block w-full ${
@@ -57,18 +56,20 @@ const Header = () => {
                 } `}
               >
                 <Image
+                  id="logodark"
                   src="/images/logo/logo-2.png"
                   alt="logo"
                   width={140}
                   height={30}
-                  className="w-7/10 dark:hidden"
+                  className="w-full dark:hidden"
                 />
                 <Image
+                  id="logolight"
                   src="/images/logo/logo.png"
                   alt="logo"
                   width={140}
                   height={30}
-                  className="hidden w-7/10 dark:block"
+                  className="hidden w-full dark:block"
                 />
               </Link>
             </div>
@@ -171,9 +172,7 @@ const Header = () => {
                 >
                   Sign Up
                 </Link>
-                <div>
-                  <ThemeToggler />
-                </div>
+               
               </div>
             </div>
           </div>
